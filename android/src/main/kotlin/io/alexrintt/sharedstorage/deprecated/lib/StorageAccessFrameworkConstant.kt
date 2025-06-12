@@ -39,6 +39,7 @@ const val COPY = "copy"
 const val LAST_MODIFIED = "lastModified"
 const val GET_DOCUMENT_THUMBNAIL = "getDocumentThumbnail"
 const val CHILD = "child"
+const val CAN_OPEN_DOCUMENT_TREE = "canOpenDocumentTree"
 
 /**
  * Available DocumentFileHelper Method Channel APIs

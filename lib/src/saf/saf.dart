@@ -134,6 +134,18 @@ Future<bool?> canRead(Uri uri) async => kDocumentFileChannel
 Future<bool?> canWrite(Uri uri) async => kDocumentFileChannel
     .invokeMethod<bool>('canWrite', <String, String>{'uri': '$uri'});
 
+/// {@template sharedstorage.saf.canOpenDocumentTree}
+/// Check if the device supports Storage Access Framework (SAF) and can open document trees.
+///
+/// Returns `true` if the device has apps that can handle ACTION_OPEN_DOCUMENT_TREE intents,
+/// `false` otherwise. This is useful to determine SAF support before attempting to use
+/// document tree operations.
+///
+/// [Refer to details](https://developer.android.com/reference/android/content/Intent#ACTION_OPEN_DOCUMENT_TREE).
+/// {@endtemplate}
+Future<bool?> canOpenDocumentTree() async => kDocumentFileChannel
+    .invokeMethod<bool>('canOpenDocumentTree');
+
 /// {@template sharedstorage.saf.getDocumentThumbnail}
 /// Equivalent to `DocumentsContract.getDocumentThumbnail`.
 ///

@@ -289,7 +289,20 @@ internal class DocumentFileApi(private val plugin: SharedStoragePlugin) :
           result.notSupported(CHILD, API_21, mapOf("uri" to uri))
         }
       }
+      CAN_OPEN_DOCUMENT_TREE -> {
+        result.success(canOpenDocumentTree())
+      }
       else -> result.notImplemented()
+    }
+  }
+
+  private fun canOpenDocumentTree(): Boolean {
+    return try {
+      val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
+      val activities = plugin.context.packageManager.queryIntentActivities(intent, 0)
+      activities.isNotEmpty()
+    } catch (e: Exception) {
+      false
     }
   }
 
