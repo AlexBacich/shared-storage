@@ -26,3 +26,5 @@ flutter:
       android:
         package: io.alexrintt.sharedstorage
         pluginClass: SharedStoragePlugin
+        supportedBuildSystems:
+          - gradle
