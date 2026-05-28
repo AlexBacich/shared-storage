@@ -2,6 +2,7 @@ group 'io.alexrintt.sharedstorage'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     compileSdk 36
